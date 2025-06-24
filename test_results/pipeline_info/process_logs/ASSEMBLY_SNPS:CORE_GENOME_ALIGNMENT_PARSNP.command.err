@@ -1,0 +1,43 @@
+10:20:40 - [1;37mINFO[0m - |--Parsnp 2.0.3--|
+
+10:20:40 - [1;37mINFO[0m - 
+***********************
+SETTINGS:
+|-refgenome:	GCA_002598005.1_ASM259800v1.fna
+|-genomes:	
+	genomes/GCA_002596765.1_ASM259676v1.fna
+	genomes/GCA_002587385.1_ASM258738v1.fna
+	genomes/GCF_000819615.1_ViralProj14015.fna
+|-aligner:	muscle
+|-outdir:	Parsnp
+|-OS:	Linux
+|-threads:	2
+***********************
+    
+10:20:40 - [1;37mINFO[0m - <<Parsnp started>>
+10:20:40 - [1;37mINFO[0m - No genbank file provided for reference annotations, skipping..
+10:20:40 - [1;34mDEBUG[0m - Writing .ini file
+10:20:40 - [1;37mINFO[0m - Running Parsnp multi-MUM search and libMUSCLE aligner...
+10:20:40 - [1;34mDEBUG[0m - time /usr/local/bin/bin/parsnp_core Parsnp/parsnpAligner.ini
+10:20:40 - [1;34mDEBUG[0m - STDOUT was piped... please see output file:	 Parsnp/log/parsnp-aligner.out
+10:20:40 - [1;34mDEBUG[0m - STDERR was piped... please see output file:	 Parsnp/log/parsnp-aligner.err
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;34mDEBUG[0m - harvesttools -q -o Parsnp/parsnp.ggr -f Parsnp/GCA_002598005.1_ASM259800v1.fna.ref -x Parsnp/parsnp.xmfa
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;34mDEBUG[0m - time harvesttools -i Parsnp/parsnp.ggr -S Parsnp/parsnp.snps.mblocks
+10:20:40 - [1;34mDEBUG[0m - STDOUT was piped... please see output file:	 Parsnp/log/harvest-mblocks.out
+10:20:40 - [1;34mDEBUG[0m - STDERR was piped... please see output file:	 Parsnp/log/harvest-mblocks.err
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;37mINFO[0m - Reconstructing core genome phylogeny...
+10:20:40 - [1;34mDEBUG[0m - time FastTreeMP -nt -quote -gamma -slow -boot 100 Parsnp/parsnp.snps.mblocks
+10:20:40 - [1;34mDEBUG[0m - STDOUT was piped... please see output file:	 Parsnp/log/fasttree.out
+10:20:40 - [1;34mDEBUG[0m - STDERR was piped... please see output file:	 Parsnp/log/fasttree.err
+10:20:40 - [1;34mDEBUG[0m - 
+10:20:40 - [1;37mINFO[0m - Aligned 3 genomes in 0.15 seconds
+10:20:40 - [1;37mINFO[0m - Parsnp finished! All output available in Parsnp
+10:20:40 - [1;34mDEBUG[0m - Validating output directory contents
+10:20:40 - [1;31mERROR[0m - parsnp.tree:		newick format tree is missing!
+10:20:41 - [1;37mINFO[0m - |--Parsnp 2.0.3--|
+

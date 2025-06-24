@@ -1,0 +1,19 @@
+Unable to find image 'quay.io/biocontainers/biopython@sha256:10d755c731c82a22d91fc346f338ba47d5fd4f3b357828f5bbc903c9be865614' locally
+quay.io/biocontainers/biopython@sha256:10d755c731c82a22d91fc346f338ba47d5fd4f3b357828f5bbc903c9be865614: Pulling from biocontainers/biopython
+fa7e54f17dc0: Pulling fs layer
+4ca545ee6d5d: Pulling fs layer
+4939a8460c86: Pulling fs layer
+4ca545ee6d5d: Verifying Checksum
+4ca545ee6d5d: Download complete
+fa7e54f17dc0: Verifying Checksum
+fa7e54f17dc0: Download complete
+fa7e54f17dc0: Pull complete
+4ca545ee6d5d: Pull complete
+4939a8460c86: Verifying Checksum
+4939a8460c86: Download complete
+4939a8460c86: Pull complete
+Digest: sha256:10d755c731c82a22d91fc346f338ba47d5fd4f3b357828f5bbc903c9be865614
+Status: Downloaded newer image for quay.io/biocontainers/biopython@sha256:10d755c731c82a22d91fc346f338ba47d5fd4f3b357828f5bbc903c9be865614
+Reading in phylogeny, recombination position inputs.
+Traversing tree to get all tips to apply mask to for each recombination event.
+Iterating through sequence file, masking recombination positions.

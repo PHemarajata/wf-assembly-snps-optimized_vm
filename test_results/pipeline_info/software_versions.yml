@@ -1,0 +1,40 @@
+"ASSEMBLY_SNPS:CREATE_SNP_DISTANCE_MATRIX_SNP_DISTS":
+    snp-dists: 0.8.2
+"ASSEMBLY_SNPS:MASK_RECOMBINANT_POSITIONS_BIOPYTHON":
+    python: Python 3.12.0
+"ASSEMBLY_SNPS:INFILE_HANDLING_UNIX":
+  ubuntu: 22.04.5 LTS 
+"ASSEMBLY_SNPS:INFILE_HANDLING_UNIX":
+  ubuntu: 22.04.5 LTS 
+"ASSEMBLY_SNPS:CALCULATE_PAIRWISE_DISTANCES_SNP_DISTS":
+    snp-dists: 0.8.2
+"ASSEMBLY_SNPS:CORE_GENOME_ALIGNMENT_PARSNP":
+    parsnp:     parsnp 2.0.3
+"ASSEMBLY_SNPS:CREATE_MASKED_SNP_DISTANCE_MATRIX_SNP_DISTS":
+    snp-dists: 0.8.2
+"ASSEMBLY_SNPS:INFILE_HANDLING_UNIX":
+  ubuntu: 22.04.5 LTS 
+"ASSEMBLY_SNPS:CONVERT_GINGR_TO_FASTA_HARVESTTOOLS":
+    harvesttools: 
+"ASSEMBLY_SNPS:INFILE_HANDLING_UNIX":
+  ubuntu: 22.04.5 LTS 
+"ASSEMBLY_SNPS:RECOMBINATION:RECOMBINATION_GUBBINS":
+    gubbins:     3.1.4
+"ASSEMBLY_SNPS:BUILD_PHYLOGENETIC_TREE_PARSNP":
+    fasttree:     Detailed usage for FastTree 2.1.11 Double precision (No SSE3):
+    raxml:     
+    
+    This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+    
+    With greatly appreciated code contributions by:
+    Andre Aberer      (HITS)
+    Simon Berger      (HITS)
+    Alexey Kozlov     (HITS)
+    Kassian Kobert    (HITS)
+    David Dao         (KIT and HITS)
+    Sarah Lutteropp   (KIT and HITS)
+    Nick Pattengale   (Sandia)
+    Wayne Pfeiffer    (SDSC)
+    Akifumi S. Tanabe (NRIFS)
+    Charlie Taylor    (UF)
+    

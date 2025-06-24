@@ -1,0 +1,38 @@
+Unable to find image 'staphb/snp-dists@sha256:9d457181cccacbbea0a3cb935edb1d066011fbc2f578694b6c5f9d9d58dcac15' locally
+docker.io/staphb/snp-dists@sha256:9d457181cccacbbea0a3cb935edb1d066011fbc2f578694b6c5f9d9d58dcac15: Pulling from staphb/snp-dists
+528184910841: Pulling fs layer
+8a9df81d603d: Pulling fs layer
+636d9303bf66: Pulling fs layer
+672b5bdcef61: Pulling fs layer
+881fc916efe0: Pulling fs layer
+1d14904b00fc: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+881fc916efe0: Waiting
+1d14904b00fc: Waiting
+4f4fb700ef54: Waiting
+672b5bdcef61: Waiting
+8a9df81d603d: Verifying Checksum
+8a9df81d603d: Download complete
+636d9303bf66: Verifying Checksum
+636d9303bf66: Download complete
+672b5bdcef61: Download complete
+528184910841: Verifying Checksum
+528184910841: Download complete
+4f4fb700ef54: Verifying Checksum
+4f4fb700ef54: Download complete
+1d14904b00fc: Verifying Checksum
+1d14904b00fc: Download complete
+881fc916efe0: Verifying Checksum
+881fc916efe0: Download complete
+528184910841: Pull complete
+8a9df81d603d: Pull complete
+636d9303bf66: Pull complete
+672b5bdcef61: Pull complete
+881fc916efe0: Pull complete
+1d14904b00fc: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:9d457181cccacbbea0a3cb935edb1d066011fbc2f578694b6c5f9d9d58dcac15
+Status: Downloaded newer image for staphb/snp-dists@sha256:9d457181cccacbbea0a3cb935edb1d066011fbc2f578694b6c5f9d9d58dcac15
+This is snp-dists 0.8.2
+Will use 2 threads.
+Read 4 sequences of length 863

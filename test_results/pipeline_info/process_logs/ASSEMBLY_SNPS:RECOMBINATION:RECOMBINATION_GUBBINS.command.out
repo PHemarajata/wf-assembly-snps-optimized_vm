@@ -1,0 +1,544 @@
+[2025-Jun-24 Tue 10:21:11] INFO: Performing recombination using Gubbins.
+
+--- Gubbins 3.1.4 ---
+
+Croucher N. J., Page A. J., Connor T. R., Delaney A. J., Keane J. A., Bentley S. D., Parkhill J., Harris S.R. "Rapid phylogenetic analysis of large samples of recombinant bacterial whole genome sequences using Gubbins". Nucleic Acids Res. 2015 Feb 18;43(3):e15. doi: 10.1093/nar/gku1196.
+
+Checking dependencies...
+Trying multithreaded version of RAxML because no single threaded version of RAxML could be found. Just to warn you, this requires 2 threads.
+
+Trying multithreaded version of RAxML because no single threaded version of RAxML could be found. Just to warn you, this requires 2 threads.
+
+...done. Run time: 0.09 s
+
+Checking input files...
+...done. Run time: 0.10 s
+
+Filtering input alignment...
+...done. Run time: 0.10 s
+
+Running Gubbins to detect SNPs...
+gubbins /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.fasta
+...done. Run time: 0.11 s
+
+Entering the main loop.
+
+*** Iteration 1 ***
+
+Copying the starting tree...
+...done. Run time: 0.11 s
+
+Reconstructing ancestral sequences with pyjar...
+Warning, you specified a working directory via "-w"
+Keep in mind that RAxML only accepts absolute path names, not relative ones!
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 38 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.06%
+
+RAxML Model Optimization up to an accuracy of 0.100000 log likelihood units
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 38
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_1_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_1.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa 
+
+
+
+WARNING the alpha parameter with a value of 15.904182 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 32.936609 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 71.638065 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+Model parameters (binary file format) written to: /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_binaryModelParameters.Parsnp.Core_Alignment.iteration_1_reconstruction
+0.005476 -2621.267809
+
+
+Overall Time for Tree Evaluation 0.005552
+Final GAMMA  likelihood: -2621.267809
+
+Number of free parameters for AIC-TEST(BR-LEN): 14
+Number of free parameters for AIC-TEST(NO-BR-LEN): 9
+
+
+Model Parameters of Partition 0, Name: No Name Provided, Type of Data: DNA
+alpha: 71.638065
+Tree-Length: 34.595774
+rate A <-> C: 0.000100
+rate A <-> G: 234.739328
+rate A <-> T: 35.134514
+rate C <-> G: 66.627552
+rate C <-> T: 503.317516
+rate G <-> T: 1.000000
+
+freq pi(A): 0.222798
+freq pi(C): 0.246690
+freq pi(G): 0.221071
+freq pi(T): 0.309442
+
+Final tree written to:                 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_result.Parsnp.Core_Alignment.iteration_1_reconstruction
+Execution Log File written to:         /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_log.Parsnp.Core_Alignment.iteration_1_reconstruction
+
+Fitting substitution model to tree...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_1_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_1.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa
+
+Running joint ancestral reconstruction with pyjar
+Warning, you specified a working directory via "-w"
+Keep in mind that RAxML only accepts absolute path names, not relative ones!
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 38 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.06%
+
+RAxML Model Optimization up to an accuracy of 0.100000 log likelihood units
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 38
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_2_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_2.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa 
+
+
+
+WARNING the alpha parameter with a value of 15.942492 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 32.982051 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 71.695991 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+Model parameters (binary file format) written to: /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_binaryModelParameters.Parsnp.Core_Alignment.iteration_2_reconstruction
+0.005313 -2621.266144
+
+
+Overall Time for Tree Evaluation 0.005388
+Final GAMMA  likelihood: -2621.266144
+
+Number of free parameters for AIC-TEST(BR-LEN): 14
+Number of free parameters for AIC-TEST(NO-BR-LEN): 9
+
+
+Model Parameters of Partition 0, Name: No Name Provided, Type of Data: DNA
+alpha: 71.695991
+Tree-Length: 34.595776
+rate A <-> C: 0.000100
+rate A <-> G: 234.268295
+rate A <-> T: 35.038745
+rate C <-> G: 66.437883
+rate C <-> T: 502.644870
+rate G <-> T: 1.000000
+
+freq pi(A): 0.222798
+freq pi(C): 0.246690
+freq pi(G): 0.221071
+freq pi(T): 0.309442
+
+Final tree written to:                 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_result.Parsnp.Core_Alignment.iteration_2_reconstruction
+Execution Log File written to:         /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_log.Parsnp.Core_Alignment.iteration_2_reconstruction
+
+Transferring pyjar results onto original recombination-corrected tree
+
+Done transfer
+...done. Run time: 0.28 s
+
+Running Gubbins to detect recombinations...
+gubbins -r -v Parsnp.Core_Alignment.fasta.gaps.vcf -a 100 -b 10000 -f /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.fasta -t Parsnp.Core_Alignment.iteration_1.tre -m 3 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_1.internal.joint.aln
+...done. Run time: 0.30 s
+
+Checking for convergence...
+...done. Run time: 0.30 s
+
+*** Iteration 2 ***
+Trying multithreaded version of RAxML because no single threaded version of RAxML could be found. Just to warn you, this requires 2 threads.
+
+Trying multithreaded version of RAxML because no single threaded version of RAxML could be found. Just to warn you, this requires 2 threads.
+
+
+Constructing the phylogenetic tree with raxmlHPC-PTHREADS...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -f d -p 1 -s /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_1.tre.phylip -n Parsnp.Core_Alignment.iteration_2 -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_1.tre > /dev/null 2>&1
+...done. Run time: 0.42 s
+
+Reconstructing ancestral sequences with pyjar...
+
+Fitting substitution model to tree...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_2_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_2.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa
+
+Running joint ancestral reconstruction with pyjar
+Warning, you specified a working directory via "-w"
+Keep in mind that RAxML only accepts absolute path names, not relative ones!
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 38 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.06%
+
+RAxML Model Optimization up to an accuracy of 0.100000 log likelihood units
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 38
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_3_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_3.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa 
+
+
+
+WARNING the alpha parameter with a value of 15.942492 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 32.982051 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 71.695991 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+Model parameters (binary file format) written to: /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_binaryModelParameters.Parsnp.Core_Alignment.iteration_3_reconstruction
+0.005186 -2621.266144
+
+
+Overall Time for Tree Evaluation 0.005285
+Final GAMMA  likelihood: -2621.266144
+
+Number of free parameters for AIC-TEST(BR-LEN): 14
+Number of free parameters for AIC-TEST(NO-BR-LEN): 9
+
+
+Model Parameters of Partition 0, Name: No Name Provided, Type of Data: DNA
+alpha: 71.695991
+Tree-Length: 34.595776
+rate A <-> C: 0.000100
+rate A <-> G: 234.268295
+rate A <-> T: 35.038745
+rate C <-> G: 66.437883
+rate C <-> T: 502.644870
+rate G <-> T: 1.000000
+
+freq pi(A): 0.222798
+freq pi(C): 0.246690
+freq pi(G): 0.221071
+freq pi(T): 0.309442
+
+Final tree written to:                 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_result.Parsnp.Core_Alignment.iteration_3_reconstruction
+Execution Log File written to:         /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_log.Parsnp.Core_Alignment.iteration_3_reconstruction
+
+Transferring pyjar results onto original recombination-corrected tree
+
+Done transfer
+...done. Run time: 0.51 s
+
+Running Gubbins to detect recombinations...
+gubbins -r -v Parsnp.Core_Alignment.fasta.gaps.vcf -a 100 -b 10000 -f /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.fasta -t Parsnp.Core_Alignment.iteration_2.tre -m 3 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_2.internal.joint.aln
+...done. Run time: 0.53 s
+
+Checking for convergence...
+...done. Run time: 0.53 s
+
+*** Iteration 3 ***
+
+Constructing the phylogenetic tree with raxmlHPC-PTHREADS...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -f d -p 1 -s /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_2.tre.phylip -n Parsnp.Core_Alignment.iteration_3 -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_2.tre > /dev/null 2>&1
+...done. Run time: 0.55 s
+
+Reconstructing ancestral sequences with pyjar...
+
+Fitting substitution model to tree...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_3_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_3.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa
+
+Running joint ancestral reconstruction with pyjar
+Warning, you specified a working directory via "-w"
+Keep in mind that RAxML only accepts absolute path names, not relative ones!
+
+RAxML can't, parse the alignment file as phylip file 
+it will now try to parse it as FASTA file
+
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 38 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 0.06%
+
+RAxML Model Optimization up to an accuracy of 0.100000 log likelihood units
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+All free model parameters will be estimated by RAxML
+GAMMA model of rate heterogeneity, ML estimate of alpha-parameter
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 38
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_4_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_4.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa 
+
+
+
+WARNING the alpha parameter with a value of 15.942492 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 32.982051 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+WARNING the alpha parameter with a value of 71.695991 estimated by RAxML for partition number 0 with the name "No Name Provided"
+is larger than 10.000000. You should do a model test and confirm that you actually need to incorporate a model of rate heterogeneity!
+You can run inferences with a plain substitution model (without rate heterogeneity) by specifyng the CAT model and the "-V" option!
+
+
+Model parameters (binary file format) written to: /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_binaryModelParameters.Parsnp.Core_Alignment.iteration_4_reconstruction
+0.005569 -2621.266144
+
+
+Overall Time for Tree Evaluation 0.005662
+Final GAMMA  likelihood: -2621.266144
+
+Number of free parameters for AIC-TEST(BR-LEN): 14
+Number of free parameters for AIC-TEST(NO-BR-LEN): 9
+
+
+Model Parameters of Partition 0, Name: No Name Provided, Type of Data: DNA
+alpha: 71.695991
+Tree-Length: 34.595776
+rate A <-> C: 0.000100
+rate A <-> G: 234.268295
+rate A <-> T: 35.038745
+rate C <-> G: 66.437883
+rate C <-> T: 502.644870
+rate G <-> T: 1.000000
+
+freq pi(A): 0.222798
+freq pi(C): 0.246690
+freq pi(G): 0.221071
+freq pi(T): 0.309442
+
+Final tree written to:                 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_result.Parsnp.Core_Alignment.iteration_4_reconstruction
+Execution Log File written to:         /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/RAxML_log.Parsnp.Core_Alignment.iteration_4_reconstruction
+
+Transferring pyjar results onto original recombination-corrected tree
+
+Done transfer
+...done. Run time: 0.64 s
+
+Running Gubbins to detect recombinations...
+gubbins -r -v Parsnp.Core_Alignment.fasta.gaps.vcf -a 100 -b 10000 -f /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.fasta -t Parsnp.Core_Alignment.iteration_3.tre -m 3 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_3.internal.joint.aln
+...done. Run time: 0.66 s
+
+Checking for convergence...
+...done. Run time: 0.66 s
+
+*** Iteration 4 ***
+
+Constructing the phylogenetic tree with raxmlHPC-PTHREADS...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -f d -p 1 -s /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_3.tre.phylip -n Parsnp.Core_Alignment.iteration_4 -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/Parsnp.Core_Alignment.iteration_3.tre > /dev/null 2>&1
+...done. Run time: 0.68 s
+
+Reconstructing ancestral sequences with pyjar...
+
+Fitting substitution model to tree...
+raxmlHPC-PTHREADS -T 2 -safe -m GTRGAMMA -s Parsnp.Core_Alignment.fasta.snp_sites.aln -n Parsnp.Core_Alignment.iteration_4_reconstruction -t /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_4.tre.rooted -f e -w /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa
+
+Running joint ancestral reconstruction with pyjar
+
+Transferring pyjar results onto original recombination-corrected tree
+
+Done transfer
+...done. Run time: 0.77 s
+
+Running Gubbins to detect recombinations...
+gubbins -r -v Parsnp.Core_Alignment.fasta.gaps.vcf -a 100 -b 10000 -f /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.fasta -t Parsnp.Core_Alignment.iteration_4.tre -m 3 /home/peerah/wf-assembly-snps-optimized_vm/work/96/6ac45e7d7237a58c35663bbebec799/tmpy6jo0roa/Parsnp.Core_Alignment.iteration_4.internal.joint.aln
+...done. Run time: 0.79 s
+
+Checking for convergence...
+Convergence after 4 iterations: Tree observed before.
+
+Exiting the main loop.
+
+Creating the final output...
+...finished. Total run time: 0.80 s
