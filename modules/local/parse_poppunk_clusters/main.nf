@@ -2,10 +2,10 @@ process PARSE_POPPUNK_CLUSTERS {
     tag "PopPUNK cluster parsing"
     label "process_single"
 
-    conda "conda-forge::python=3.9 conda-forge::pandas=2.2.3"
+    conda "conda-forge::python=3.9 conda-forge::pandas=1.3.3"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/pandas:2.2.3' :
-        'staphb/pandas:2.2.3' }"
+        'https://depot.galaxyproject.org/singularity/pandas:1.3.3' :
+        'quay.io/biocontainers/pandas:1.3.3' }"
 
     input:
     path poppunk_assignments
@@ -105,6 +105,6 @@ process PARSE_POPPUNK_CLUSTERS {
     with open('versions.yml', 'w') as f:
         f.write('"${task.process}":\\n')
         f.write('    python: "3.9"\\n')
-        f.write('    pandas: "2.2.3"\\n')
+        f.write('    pandas: "1.3.3"\\n')
     """
 }
