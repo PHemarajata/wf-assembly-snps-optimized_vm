@@ -1,0 +1,12 @@
+PopPUNK Cluster Analysis Summary
+========================================
+
+Input PopPUNK file: results_poppunk/poppunk_full/full_assign_final.csv
+Input directory: .
+Total samples in PopPUNK: 449
+Samples with FASTA files: 0
+Minimum cluster size: 3
+Clusters to process: 0
+Total samples to process: 0
+
+Cluster sizes:

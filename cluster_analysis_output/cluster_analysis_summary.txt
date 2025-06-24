@@ -1,0 +1,35 @@
+PopPUNK Cluster Analysis Summary
+========================================
+
+Total samples: 449
+Total clusters: 27
+Average cluster size: 16.6
+
+Cluster size distribution:
+  Cluster 1: 264 samples
+  Cluster 2: 76 samples
+  Cluster 3: 15 samples
+  Cluster 4: 12 samples
+  Cluster 5: 32 samples
+  Cluster 6: 8 samples
+  Cluster 7: 4 samples
+  Cluster 8: 4 samples
+  Cluster 9: 4 samples
+  Cluster 10: 4 samples
+  Cluster 11: 4 samples
+  Cluster 12: 3 samples
+  Cluster 13: 2 samples
+  Cluster 14: 2 samples
+  Cluster 15: 2 samples
+  Cluster 16: 2 samples
+  Cluster 17: 1 samples
+  Cluster 18: 1 samples
+  Cluster 19: 1 samples
+  Cluster 20: 1 samples
+  Cluster 21: 1 samples
+  Cluster 22: 1 samples
+  Cluster 23: 1 samples
+  Cluster 25: 1 samples
+  Cluster 26: 1 samples
+  Cluster 27: 1 samples
+  Cluster 28: 1 samples
