@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	d6/86d85f	3827	ASSEMBLY_SNPS_CLUSTERED:PARSE_POPPUNK_CLUSTERS (PopPUNK cluster parsing)	COMPLETED	0	2025-06-24 12:36:30.792	1.8s	1.6s	146.8%	59.7 MB	422.8 MB	12.1 MB	1.8 KB
