@@ -25,17 +25,26 @@ process PARSE_POPPUNK_CLUSTERS {
     
     import pandas as pd
     import os
+    import glob
     from pathlib import Path
     
     # Read PopPUNK assignments
     df = pd.read_csv('${poppunk_assignments}')
     
-    # Get list of input files
-    input_files = [f for f in os.listdir('.') if f.endswith(('.fasta', '.fas', '.fna', '.fsa', '.fa', '.fasta.gz', '.fas.gz', '.fna.gz', '.fsa.gz', '.fa.gz'))]
+    # Get list of input files from the input_files parameter
+    input_files = []
+    for item in ${input_files}:
+        if os.path.isfile(item):
+            input_files.append(item)
+        elif os.path.isdir(item):
+            # Search for FASTA files in directory
+            for ext in ['.fasta', '.fas', '.fna', '.fsa', '.fa', '.fasta.gz', '.fas.gz', '.fna.gz', '.fsa.gz', '.fa.gz']:
+                input_files.extend(glob.glob(os.path.join(item, f'*{ext}')))
     
     # Create mapping of sample names to files
     sample_to_file = {}
-    for file in input_files:
+    for file_path in input_files:
+        file = os.path.basename(file_path)
         # Extract sample name from filename (remove extensions)
         sample_name = Path(file).stem
         if sample_name.endswith('.fasta'):
@@ -48,7 +57,17 @@ process PARSE_POPPUNK_CLUSTERS {
             sample_name = sample_name[:-4]
         elif sample_name.endswith('.fa'):
             sample_name = sample_name[:-3]
-        sample_to_file[sample_name] = file
+        
+        # Try different matching strategies
+        # 1. Exact match
+        sample_to_file[sample_name] = file_path
+        # 2. Remove common suffixes
+        clean_name = sample_name.replace('-SPAdes', '').replace('_contigs', '')
+        sample_to_file[clean_name] = file_path
+        # 3. Extract base sample ID (everything before first underscore or dash)
+        base_name = sample_name.split('_')[0].split('-')[0]
+        if len(base_name) > 3:  # Only if meaningful length
+            sample_to_file[base_name] = file_path
     
     # Group by cluster
     clusters = df.groupby('Cluster')

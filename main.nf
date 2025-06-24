@@ -26,6 +26,7 @@ WorkflowMain.initialise(workflow, params, log)
 */
 
 include { ASSEMBLY_SNPS } from './workflows/assembly_snps'
+include { ASSEMBLY_SNPS_CLUSTERED } from './workflows/assembly_snps_clustered'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,7 +35,11 @@ include { ASSEMBLY_SNPS } from './workflows/assembly_snps'
 */
 
 workflow {
-    ASSEMBLY_SNPS()
+    if (params.poppunk_clusters) {
+        ASSEMBLY_SNPS_CLUSTERED()
+    } else {
+        ASSEMBLY_SNPS()
+    }
 }
 
 /*
