@@ -1,0 +1,20 @@
+FastTree Version 2.1.11 Double precision (No SSE3)
+Alignment: Parsnp-Gubbins.masked_recombination.fasta
+Nucleotide distances: Jukes-Cantor Joins: balanced Support: SH-like 1000
+Search: Normal +NNI +SPR (2 rounds range 10) +ML-NNI opt-each=1
+TopHits: 1.00*sqrtN close=default refresh=0.80
+ML Model: Jukes-Cantor, CAT approximation with 20 rate categories
+Initial topology in 0.00 seconds
+Refining topology: 8 rounds ME-NNIs, 2 rounds ME-SPRs, 4 rounds ML-NNIs
+Total branch-length 0.351 after 0.01 sec
+ML-NNI round 1: LogLk = -7433.231 NNIs 0 max delta 0.00 Time 0.02
+Switched to using 20 rate categories (CAT approximation)
+Rate categories were divided by 0.688 so that average rate = 1.0
+CAT-based log-likelihoods may not be comparable across runs
+Use -gamma for approximate but comparable Gamma(20) log-likelihoods
+ML-NNI round 2: LogLk = -7213.761 NNIs 0 max delta 0.00 Time 0.03
+Turning off heuristics for final round of ML NNIs (converged)
+ML-NNI round 3: LogLk = -7213.625 NNIs 0 max delta 0.00 Time 0.04 (final)
+Optimize all lengths: LogLk = -7213.625 Time 0.05
+Total time: 0.08 seconds Unique: 4/4 Bad splits: 0/1
+[2025-Jun-24 Tue 10:21:30] ERROR: Final Parsnp-Gubbins Tree Output file Parsnp-Gubbins.tree absent
