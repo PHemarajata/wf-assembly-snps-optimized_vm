@@ -31,15 +31,16 @@ process PARSE_POPPUNK_CLUSTERS {
     # Read PopPUNK assignments
     df = pd.read_csv('${poppunk_assignments}')
     
-    # Get list of input files from the input_files parameter
+    # Get list of input files from the current directory
     input_files = []
-    for item in ${input_files}:
-        if os.path.isfile(item):
-            input_files.append(item)
-        elif os.path.isdir(item):
-            # Search for FASTA files in directory
+    # Look for all files in current directory that were staged by Nextflow
+    for file_path in glob.glob('*'):
+        if os.path.isfile(file_path) and file_path != '${poppunk_assignments}':
+            # Check if it's a FASTA file
             for ext in ['.fasta', '.fas', '.fna', '.fsa', '.fa', '.fasta.gz', '.fas.gz', '.fna.gz', '.fsa.gz', '.fa.gz']:
-                input_files.extend(glob.glob(os.path.join(item, f'*{ext}')))
+                if file_path.endswith(ext):
+                    input_files.append(file_path)
+                    break
     
     # Create mapping of sample names to files
     sample_to_file = {}

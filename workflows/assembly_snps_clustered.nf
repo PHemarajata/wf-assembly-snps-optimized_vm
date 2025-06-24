@@ -133,10 +133,10 @@ workflow ASSEMBLY_SNPS_CLUSTERED {
         ch_qc_filecheck = ch_qc_filecheck.concat(REF_INFILE_HANDLING_UNIX.out.qc_filecheck)
 
         ch_reference_file = REF_INFILE_HANDLING_UNIX.out.input_files
-                                .collect()
-                                .map { it[0][1] } // Extract the file from [meta, file]
+                                .map { meta, file -> file }
+                                .first()
     } else {
-        ch_reference_file = []
+        ch_reference_file = Channel.value(null)
     }
 
     /*
@@ -151,7 +151,7 @@ workflow ASSEMBLY_SNPS_CLUSTERED {
         // Parse PopPUNK clusters and create file lists for each cluster
         PARSE_POPPUNK_CLUSTERS (
             ch_poppunk_clusters,
-            INPUT_CHECK.out.input_files.collect().map { it.collect { meta, file -> file } }
+            INPUT_CHECK.out.input_files.map { meta, file -> file }.collect()
         )
         ch_versions = ch_versions.mix(PARSE_POPPUNK_CLUSTERS.out.versions)
 
@@ -160,7 +160,8 @@ workflow ASSEMBLY_SNPS_CLUSTERED {
             .flatten()
             .map { cluster_file ->
                 def cluster_id = cluster_file.baseName.replaceAll('cluster_', '')
-                def files = cluster_file.readLines().collect { file(it) }
+                def file_lines = cluster_file.readLines()
+                def files = file_lines.findAll { it.trim() != "" }.collect { file(it.trim()) }
                 [ cluster_id, files ]
             }
             .filter { cluster_id, files -> files.size() >= params.min_cluster_size }
@@ -170,7 +171,7 @@ workflow ASSEMBLY_SNPS_CLUSTERED {
         CLUSTER_SNP_ANALYSIS (
             ch_clusters,
             ch_reference_file,
-            ch_snp_package
+            Channel.value(ch_snp_package)
         )
         ch_versions = ch_versions.mix(CLUSTER_SNP_ANALYSIS.out.versions)
         ch_qc_filecheck = ch_qc_filecheck.concat(CLUSTER_SNP_ANALYSIS.out.qc_filecheck)

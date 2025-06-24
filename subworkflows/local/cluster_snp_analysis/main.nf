@@ -17,7 +17,7 @@ include { RECOMBINATION                                    } from "../recombinat
 workflow CLUSTER_SNP_ANALYSIS {
     take:
     cluster_files    // channel: [ cluster_id, [files] ]
-    reference_file   // path: reference file (optional)
+    reference_file   // val: reference file (optional)
     snp_package      // val: snp package name
 
     main:
@@ -26,11 +26,12 @@ workflow CLUSTER_SNP_ANALYSIS {
 
     // Process each cluster
     cluster_files
-        .map { cluster_id, files ->
+        .combine(snp_package)
+        .map { cluster_id, files, snp_pkg ->
             def meta = [:]
             meta['id'] = "cluster_${cluster_id}"
             meta['cluster_id'] = cluster_id
-            meta['snp_package'] = snp_package
+            meta['snp_package'] = snp_pkg
             [ meta, files ]
         }
         .set { ch_cluster_input }
@@ -39,7 +40,8 @@ workflow CLUSTER_SNP_ANALYSIS {
     INFILE_HANDLING_UNIX (
         ch_cluster_input.flatMap { meta, files ->
             files.collect { file ->
-                def file_meta = meta.clone()
+                def file_meta = [:]
+                file_meta.putAll(meta)
                 file_meta['id'] = "${meta.cluster_id}_${file.baseName}"
                 [ file_meta, file ]
             }
@@ -52,36 +54,34 @@ workflow CLUSTER_SNP_ANALYSIS {
     INFILE_HANDLING_UNIX.out.input_files
         .map { meta, file ->
             def cluster_id = meta.cluster_id
-            [ cluster_id, file ]
+            def snp_pkg = meta.snp_package
+            [ cluster_id, file, snp_pkg ]
         }
         .groupTuple()
-        .map { cluster_id, files ->
+        .map { cluster_id, files, snp_pkgs ->
             def meta = [:]
             meta['id'] = "cluster_${cluster_id}"
             meta['cluster_id'] = cluster_id
-            meta['snp_package'] = snp_package
+            meta['snp_package'] = snp_pkgs[0] // All should be the same
             [ meta, files ]
         }
         .set { ch_cluster_files }
 
     // Handle reference file for each cluster
-    if (reference_file) {
-        ch_cluster_files
-            .map { meta, files ->
-                [ meta, files, reference_file ]
-            }
-            .set { ch_cluster_with_ref }
-    } else {
-        // Use largest file in each cluster as reference
-        ch_cluster_files
-            .map { meta, files ->
+    ch_cluster_files
+        .combine(reference_file)
+        .map { meta, files, ref_file ->
+            if (ref_file != null) {
+                [ meta, files, ref_file ]
+            } else {
+                // Use largest file in each cluster as reference
                 def sorted_files = files.sort { it.size() }.reverse()
-                def ref_file = sorted_files[0]
+                def ref_file_local = sorted_files[0]
                 def remaining_files = sorted_files.drop(1)
-                [ meta, remaining_files, ref_file ]
+                [ meta, remaining_files, ref_file_local ]
             }
-            .set { ch_cluster_with_ref }
-    }
+        }
+        .set { ch_cluster_with_ref }
 
     // Run ParSNP for each cluster
     CORE_GENOME_ALIGNMENT_PARSNP (
