@@ -9,7 +9,7 @@ process PARSE_POPPUNK_CLUSTERS {
 
     input:
     path poppunk_assignments
-    path input_files
+    val input_file_list
 
     output:
     path "cluster_*.txt", emit: cluster_files
@@ -31,16 +31,20 @@ process PARSE_POPPUNK_CLUSTERS {
     # Read PopPUNK assignments
     df = pd.read_csv('${poppunk_assignments}')
     
-    # Get list of input files from the current directory
-    input_files = []
-    # Look for all files in current directory that were staged by Nextflow
-    for file_path in glob.glob('*'):
-        if os.path.isfile(file_path) and file_path != '${poppunk_assignments}':
+    # Get list of input files from the provided file paths
+    input_files = ${input_file_list}
+    
+    # Filter for FASTA files and verify they exist
+    valid_files = []
+    for file_path in input_files:
+        if os.path.exists(file_path):
             # Check if it's a FASTA file
             for ext in ['.fasta', '.fas', '.fna', '.fsa', '.fa', '.fasta.gz', '.fas.gz', '.fna.gz', '.fsa.gz', '.fa.gz']:
                 if file_path.endswith(ext):
-                    input_files.append(file_path)
+                    valid_files.append(file_path)
                     break
+    
+    input_files = valid_files
     
     # Create mapping of sample names to files with flexible matching
     sample_to_file = {}
