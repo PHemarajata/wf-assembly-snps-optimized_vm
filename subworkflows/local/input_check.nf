@@ -78,7 +78,7 @@ workflow INPUT_CHECK {
             .map { id, file_path ->
                         def meta = [:]
                         meta.id  = id
-                        return [ meta, [ file_path ] ]
+                        return [ meta, file_path ]
                 }
     } else if (hasExtension(ch_input, "tsv")) {
         // Extracts read files from samplesheet TSV and distribute into channels
@@ -102,7 +102,7 @@ workflow INPUT_CHECK {
             .map { id, file_path ->
                         def meta = [:]
                         meta.id  = id
-                        return [ meta, [ file_path ] ]
+                        return [ meta, file_path ]
                 }
     } else if (hasExtension(ch_input, "xlsx") || hasExtension(ch_input, "xls") || hasExtension(ch_input, "ods")) {
         // Convert samplesehet to TSV format
@@ -136,7 +136,7 @@ workflow INPUT_CHECK {
             .map { id, file_path ->
                         def meta = [:]
                         meta.id  = id
-                        return [ meta, [ file_path ] ]
+                        return [ meta, file_path ]
                 }
 
         // Collect version info
@@ -152,7 +152,7 @@ workflow INPUT_CHECK {
                 .map { row ->
                             def meta = [:]
                             meta.id = removeExtensions(row)
-                            return [ meta, [ row ] ]
+                            return [ meta, row ]
                     }
             ch_input_rows = Channel.empty()
         } else {
@@ -163,7 +163,7 @@ workflow INPUT_CHECK {
                 .map { row ->
                             def meta = [:]
                             meta.id = removeExtensions(row)
-                            return [ meta, [ row ] ]
+                            return [ meta, row ]
                     }
             ch_input_rows = Channel.empty()
         }
