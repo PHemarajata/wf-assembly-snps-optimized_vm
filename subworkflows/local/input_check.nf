@@ -32,13 +32,14 @@ def removeExtensions(it) {
     // Remove file path
     it = it.getName()
 
-    // For each item in extensions, replace it
+    // For each item in extensions, replace it (case insensitive)
     extensions.eachWithIndex { item, idx ->
-        it = it.toString().replaceAll(item, '')
+        it = it.toString().replaceAll("(?i)" + item.replaceAll("\\.", "\\\\.") + "\$", '')
     }
 
-    // Replace periods and spaces; return cleaned meta
-    return it.replaceAll('\\.', '\\_').replaceAll(' ', '_')
+    // Only replace spaces with underscores, preserve periods in version numbers
+    // This maintains meaningful version numbers like .1, .2 in filenames
+    return it.replaceAll(' ', '_')
 }
 
 /*

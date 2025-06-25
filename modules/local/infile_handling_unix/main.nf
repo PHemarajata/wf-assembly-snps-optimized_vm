@@ -15,7 +15,12 @@ process INFILE_HANDLING_UNIX {
     shell:
     // Rename files with meta.id (has spaces and periods removed)
     gzip_compressed = input.toString().contains('.gz') ? '.gz' : ''
-    file_extension  = input.toString().split('.gz')[0].split('\\.')[-1]
+    // Improved file extension extraction to handle complex filenames
+    def filename_no_gz = input.toString().replaceAll(/\.gz$/i, '')
+    def known_extensions = ['fasta', 'fas', 'fna', 'fsa', 'fa']
+    file_extension = known_extensions.find { ext -> 
+        filename_no_gz.toLowerCase().endsWith('.' + ext) 
+    } ?: filename_no_gz.split('\\.')[-1]
     '''
     source bash_functions.sh
 
