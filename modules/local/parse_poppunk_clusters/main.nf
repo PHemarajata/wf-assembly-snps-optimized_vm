@@ -33,7 +33,7 @@ df = pd.read_csv('${poppunk_assignments}')
 
 # Get list of input files from the input_file_paths parameter
 input_files = []
-file_paths_str = "${input_file_paths}"
+file_paths_str = '''${input_file_paths}'''
 
 # Parse the file paths (they are joined with newlines)
 for file_path in file_paths_str.strip().split('\\n'):
