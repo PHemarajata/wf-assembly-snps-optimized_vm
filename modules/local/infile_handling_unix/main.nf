@@ -32,19 +32,25 @@ process INFILE_HANDLING_UNIX {
     find -L inputfiles/ -type f -name '*.[gG][zZ]' -exec gunzip -f {} +
 
     # Filter out small inputfiles
-    msg "Checking input file sizes.."
+    msg "Checking input file sizes for sample !{meta.id}.."
     echo -e "Sample name\tQC step\tOutcome (Pass/Fail)" > "!{meta.id}.Initial_Input_File.tsv"
+    
+    file_count=0
     for file in inputfiles/*; do
+      ((file_count++))
+      msg "Processing file ${file_count}: $(basename ${file})"
+      
       if verify_minimum_file_size "${file}" 'Input' "!{params.min_input_filesize}"; then
         echo -e "$(basename ${file%%.*})\tInput File\tPASS" \
         >> "!{meta.id}.Initial_Input_File.tsv"
       else
         echo -e "$(basename ${file%%.*})\tInput File\tFAIL" \
         >> "!{meta.id}.Initial_Input_File.tsv"
-
         rm ${file}
       fi
     done
+    
+    msg "Completed processing ${file_count} files for sample !{meta.id}"
 
     cat <<-END_VERSIONS > versions.yml
     "!{task.process}":

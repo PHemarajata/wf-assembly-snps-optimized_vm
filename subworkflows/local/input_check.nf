@@ -156,9 +156,10 @@ workflow INPUT_CHECK {
                     }
             ch_input_rows = Channel.empty()
         } else {
-            // Find files in input path directory
+            // Find files in input path directory (excluding backup subdirectories)
             ch_input_files = Channel
                 .fromPath("${ch_input.toString()}/**.{fasta,fas,fna,fsa,fa}{,.gz}", checkIfExists: true)
+                .filter { !it.toString().contains('/backup/') }
                 .ifEmpty { exit 1, "Cannot find any files matching: ${ch_input}\nNB: Path needs to be enclosed in quotes!" }
                 .map { row ->
                             def meta = [:]
