@@ -149,14 +149,15 @@ workflow ASSEMBLY_SNPS_CLUSTERED {
         log.info "Running in PopPUNK cluster mode"
         
         // Parse PopPUNK clusters and create file lists for each cluster
-        // Collect all input files for staging
-        ch_input_files = INPUT_CHECK.out.input_files
-            .map { meta, file -> file }
+        // Create a channel with file paths instead of staging files
+        ch_input_file_paths = INPUT_CHECK.out.input_files
+            .map { meta, file -> file.toString() }
             .collect()
+            .map { paths -> paths.join('\n') }
         
         PARSE_POPPUNK_CLUSTERS (
             ch_poppunk_clusters,
-            ch_input_files
+            ch_input_file_paths
         )
         ch_versions = ch_versions.mix(PARSE_POPPUNK_CLUSTERS.out.versions)
 
